@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - YU & YOU CAKE</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-image: url("./pic/IMG_1503.JPG");
+      background-size: cover;
+      background-position: center;
+      padding: 40px;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    /* ✅ 让表格透明化并可滚动 */
+    table {
+      width: 100%;
+      max-width: 950px;
+      margin: 40px auto;
+      border-collapse: collapse;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.25);  /* 半透明 */
+      backdrop-filter: blur(12px);             /* 毛玻璃效果 */
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;                        /* ✅ 允许垂直滚动 */
+      display: block;                          /* 让滚动生效 */
+      max-height: 420px;                       /* 限制高度 */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.6) transparent;
+    }
+
+    thead, tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed; /* 保持列宽 */
+    }
+
+    tbody {
+      display: white;
+      max-height: 370px; /* ✅ 滚动区域 */
+      overflow-y: auto;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      color:#b22222;
+      font-weight: bold;
+    }
+
+    th {
+      background-color: rgba(178, 34, 34, 0.8);
+      color: white;
+    }
+
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #b22222;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #8b0000;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #b22222;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Admin Panel - Manage Stock</h1>
+  <div class="table-box">
+  <table id="cakeTable">
+    <tr>
+      <th>Cake Name</th>
+      <th>Price (RM)</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>Butter bear cake 黄油小熊蛋糕</td>
+      <td>100-120</td>
+      <td id="status1">Available</td>
+      <td><button onclick="toggleStock(1)">Mark Out of Stock</button></td>
+    </tr>
+	
+    <tr>
+      <td>Strawberryshort cake 草莓蛋糕</td>
+      <td>100-120</td>
+      <td id="status2">Available</td>
+      <td><button onclick="toggleStock(2)">Mark Out of Stock</button></td>
+    </tr>
+	
+    <tr>
+      <td>Vintage cake 复古蛋糕</td>
+      <td>80-100</td>
+      <td id="status3">Available</td>
+      <td><button onclick="toggleStock(3)">Mark Out of Stock</button></td>
+    </tr>
+	
+	<tr>
+      <td>Minimalist cake 简约蛋糕</td>
+      <td>75-90</td>
+      <td id="status4">Available</td>
+      <td><button onclick="toggleStock(4)">Mark Out of Stock</button></td>
+    </tr>
+	
+	<tr>
+      <td>Mini wedding Cake 小型新婚蛋糕</td>
+      <td>50</td>
+      <td id="status5">Available</td>
+      <td><button onclick="toggleStock(5)">Mark Out of Stock</button></td>
+    </tr>
+	
+	<tr>
+      <td>Maggie cake  方便面蛋糕</td>
+      <td>75-90</td>
+      <td id="status6">Available</td>
+      <td><button onclick="toggleStock(6)">Mark Out of Stock</button></td>
+    </tr>
+	<tr>
+      <td>Purple yammi cake  紫芋头蛋糕</td>
+      <td>75-90</td>
+      <td id="status7">Available</td>
+      <td><button onclick="toggleStock(7)">Mark Out of Stock</button></td>
+    </tr>
+	<tr>
+      <td>Strawberry mochi cake  草莓麻薯蛋糕</td>
+      <td>100-120</td>
+      <td id="status8">Available</td>
+      <td><button onclick="toggleStock(8)">Mark Out of Stock</button></td>
+    </tr>
+	<tr>
+      <td>Matcha red bean   抹茶红豆蛋糕</td>
+      <td>100-120</td>
+      <td id="status9">Available</td>
+      <td><button onclick="toggleStock(9)">Mark Out of Stock</button></td>
+    </tr>
+  </table>
+ </div>
+ 
+ <a href="./admin home pages .html" class="back-home"> Back to Home</a>
+
+  <script>
+    function toggleStock(id) {
+      const statusCell = document.getElementById("status" + id);
+      const current = statusCell.textContent;
+
+      if (current === "Available") {
+        statusCell.textContent = "Out of Stock";
+        statusCell.style.color = "red";
+        localStorage.setItem("cake" + id, "out");
+      } else {
+        statusCell.textContent = "Available";
+        statusCell.style.color = "green";
+        localStorage.setItem("cake" + id, "available");
+      }
+    }
+
+    window.onload = () => {
+      for (let i = 1; i <= 9; i++) {
+        const saved = localStorage.getItem("cake" + i);
+        if (saved === "out") {
+          document.getElementById("status" + i).textContent = "Out of Stock";
+          document.getElementById("status" + i).style.color = "red";
+        } else {
+          document.getElementById("status" + i).textContent = "Available";
+          document.getElementById("status" + i).style.color = "green";
+        }
+      }
+    };
+  </script>
+
+</body>
+</html>

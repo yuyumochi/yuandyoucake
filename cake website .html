@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0">
+ <title>YU & YOU CAKE</title>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: #B6A9C8;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background-image: url("./pic/IMG_1501.JPG");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 190px;
+  color: #CE5E0E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+header h1 {
+  margin: 5px 0;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+header p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* NAVIGATION */
+nav {
+  background: white;
+  padding: 20px 0;
+}
+
+nav a {
+  color: #976C39;
+  margin: 0 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #635342;
+  text-decoration: underline;
+}
+
+/* MAIN TITLE */
+h2 {
+  font-size: 40px;
+  color:#909632;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* MENU GRID */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 40px;
+  padding: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.cake-card {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  padding-bottom: 25px;
+  position: relative; /* important for out-of-stock label */
+}
+
+.cake-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.cake-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: 3px solid #E9DFC6;
+}
+
+/* TEXT */
+.cake-card h3 {
+  color: #41521E;
+  margin-top: 15px;
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+.cake-card p {
+  color: #99A558;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* OUT OF STOCK LABEL */
+.out-of-stock {
+  position: absolute;      /* center over image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.8);
+  padding: 8px 15px;
+  border-radius: 10px;
+  display: none;
+  z-index: 10;
+}
+
+/* BUTTON */
+.cake-card button {
+  background: #909632;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.cake-card button:hover {
+  background: #C56E33;
+}
+
+.cake-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: gray;
+}
+
+/* FOOTER */
+footer {
+  background: #A97F5C;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  margin-top: 60px;
+  width: 100%;
+  line-height: 1.6;
+}
+
+footer h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 5px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>𝐘𝐔 𝐀𝐍𝐃 𝐘𝐎𝐔 𝐂𝐀𝐊𝐄</h1>
+  <p>𝘁𝗮𝘀𝘁𝗲 𝗱𝗲𝗹𝗶𝗴𝗵𝘁𝘀 𝗳𝗼𝗿 𝗲𝘃𝗲𝗿𝘆 𝗰𝗿𝗮𝘃𝗶𝗻𝗴 <3</p>
+</header>
+
+<nav>
+  <a href="./about us .html">About Us 关于我们</a>
+  <a href="./make acc .html">Sign in 登录</a>
+</nav>
+
+<h2>MENU</h2>
+
+<div class="menu">
+  <!-- All 9 cakes remain exactly the same as your HTML -->
+  <!-- Cake 1 -->
+  <div class="cake-card" id="cake1">
+    <img src="./pic/IMG_01.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Butter Bear Cake 黄油小熊蛋糕</h3>
+    <p>*Blackforest 黑森林巧克力口味</p>
+    <p>Member price会员: RM 90-110</p>
+    <p>Normal price非会员: RM 100-120</p>
+    <a href="./details pages/new 1.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 2 -->
+  <div class="cake-card" id="cake2">
+    <img src="./pic/IMG_02.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Strawberry Shortcake 草莓蛋糕</h3>
+    <p>*Strawberry 草莓口味</p>
+    <p>Member price会员: RM 90-110</p>
+    <p>Normal price非会员: RM 100-120</p>
+    <a href="./details pages/new 2.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 3 -->
+  <div class="cake-card" id="cake3">
+    <img src="./pic/IMG_03.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Vintage Cake 复古蛋糕</h3>
+    <p>*Vanilla (Original) 原味</p>
+    <p>Member price会员: RM 70-90</p>
+    <p>Normal price非会员: RM 80-100</p>
+    <a href="./details pages/new 3.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 4 -->
+  <div class="cake-card" id="cake4">
+    <img src="./pic/IMG_04.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Minimalist Cake 简约蛋糕</h3>
+    <p>*Vanilla 原味</p>
+    <p>Member price会员: RM 65-80</p>
+    <p>Normal price非会员: RM 75-90</p>
+    <a href="./details pages/new 4.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 5 -->
+  <div class="cake-card" id="cake5">
+    <img src="./pic/IMG_05.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Mini Wedding Cake 小型新婚蛋糕</h3>
+    <p>*Strawberry 草莓口味</p>
+    <p>Member price会员: RM 50</p>
+    <p>Normal price非会员: RM 60</p>
+    <a href="./details pages/new 5.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 6 -->
+  <div class="cake-card" id="cake6">
+    <img src="./pic/IMG_06.png">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Maggie Cake 方便面蛋糕</h3>
+    <p>*Chocolate 巧克力口味</p>
+    <p>Member price会员: RM 65-80</p>
+    <p>Normal price非会员: RM 75-90</p>
+    <a href="./details pages/new 6.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 7 -->
+  <div class="cake-card" id="cake7">
+    <img src="./pic/IMG_07.jpg">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Purple Yammi Cake 紫芋头蛋糕</h3>
+    <p>*Yam 芋头口味</p>
+    <p>Member price会员: RM 65-80</p>
+    <p>Normal price非会员: RM 75-90</p>
+    <a href="./details pages/new 7.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 8 -->
+  <div class="cake-card" id="cake8">
+    <img src="./pic/IMG_08.jpg">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Strawberry Mochi Cake 草莓麻薯蛋糕</h3>
+    <p>*Strawberry 草莓口味</p>
+    <p>Member price会员: RM 90-110</p>
+    <p>Normal price非会员: RM 100-120</p>
+    <a href="./details pages/new 8.html"><button>View Detail 详细信息</button></a>
+  </div>
+
+  <!-- Cake 9 -->
+  <div class="cake-card" id="cake9">
+    <img src="./pic/IMG_09.jpg">
+    <div class="out-of-stock">Out of Stock</div>
+    <h3>Matcha Red Bean 抹茶红豆蛋糕</h3>
+    <p>*Matcha 抹茶口味</p>
+    <p>Member price会员: RM 90-110</p>
+    <p>Normal price非会员: RM 100-120</p>
+    <a href="./details pages/new 9.html"><button>View Detail 详细信息</button></a>
+  </div>
+</div>
+
+<script>
+// 🔥 OUT OF STOCK FOR ALL 9 CAKES
+window.onload = () => {
+  for (let i = 1; i <= 9; i++) {
+    const status = localStorage.getItem("cake" + i); // 'out' or null
+    const card = document.getElementById("cake" + i);
+    if (!card) continue;
+
+    const label = card.querySelector(".out-of-stock");
+    const img = card.querySelector("img");
+    const button = card.querySelector("button");
+    const link = card.querySelector("a");
+
+    if (status === "out") {
+      label.style.display = "block";
+      img.style.opacity = "0.5";
+      button.disabled = true;
+      if (link) {
+        link.onclick = (e) => {
+          e.preventDefault();
+          alert("This cake is currently out of stock. 暂无存货。");
+        };
+      }
+    } else {
+      label.style.display = "none";
+      img.style.opacity = "1";
+      button.disabled = false;
+      if (link) link.onclick = null;
+    }
+  }
+};
+</script>
+
+<footer>
+  <h1>☏ Contact Us 联络</h1>
+  <p>Whatsapp: 011-23456789 / yu&youcake520@gmail.com</p>
+  <p>⚲ No. 18 Jalan Bukit Bintang, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia.</p>
+</footer>
+
+</body>
+</html>
