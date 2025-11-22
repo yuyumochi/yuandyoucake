@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - YU & YOU CAKE</title>
+  <style>
+    body {
+      font-family: 'courier';
+      background-image: url(./pic/IMG_1503.JPG");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .login-box {
+      background: white;
+      padding: 50px;
+      border-radius: 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #b22222;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #b22222;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+	  font weight:bold;
+    }
+
+    .login-box button:hover {
+      background: #a00000;
+    }
+
+    .login-box p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-box a {
+      color: #D64101;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Sign in </h2>
+	<h2>────────────────</h2>
+	<h2>🍰🍯🧈🥚🥛</h2>
+    <form>
+      <input type="text" placeholder="Username 用户名" required>
+      <input type="password" placeholder="Password 密码" required>
+     
+	<button type="submit"> sign in 登入</button>
+    </form>
+	 <p>Don't have an account?没有账号?<a href="file:///C:/C++%20project/sign%20in.html"> create account 创建账户 </a></p>
+    <br>
+    <a href="file:///C:/C++%20project/cake%20website%20.html"> -`click me back to home pages 点我回主页´- </a>
+  </div>
+<script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      // simple check (you can change username & password here)
+      if (user === "yuyu" && pass === "12345")
+      else if (user ==="ivy" && pass ==="4247") {
+        message.style.color = "green";
+        message.textContent = "Login successful! ";
+		
+		setTimeout(() => {
+        window.location.href = "file:///C:/C++%20project/cake%20website%20.html"; // go to your homepage
+		
+      } else {
+        message.style.color = "red";
+        message.textContent = "Invalid username or password ";
+      }
+    }
+  </script>
+</body>
+</html>
